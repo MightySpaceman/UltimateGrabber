@@ -9,6 +9,7 @@ UltimateGrabber is for educational/pentesting purposes only - **hacking someone 
 UltimateGrabber will send an Email to the preset adress within the code, containing a plethora of details about the host device. Here is what it sends, in descending order, as of version 1.1:
 
 - System name
+- Operating system
 - System timezone
 - System time (YY-MM-DD / HOUR-MINUTE-SECOND-MILLISECOND)
 - Public IPV4 adress
