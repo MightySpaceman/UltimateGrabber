@@ -19,7 +19,7 @@ UltimateGrabber will send an Email to the preset adress within the code, contain
 - Rough lat/long
 - Output of windows `arp -a` command to map network.
 - Output of `ipconfig` windows command, to also map network.
-- Finally, the script attaches a copy of the user's entire internet browsing history to the email as a .csv file.
+- **Finally, the script attaches a copy of the user's entire internet browsing history to the email as a .csv file.**
 
 ## #1 - Setup Gmail Account
 You may want to make a new Gmail account to handle the outgoing messages, and ensure your password is not leaked from the file. Simply go to gmail.com and make a fresh account. There are a few things you will need to change here.
