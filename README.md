@@ -18,7 +18,7 @@ UltimateGrabber will send an Email to the preset adress within the code, contain
 - Whether device is using VPN or not
 - Local IP adress
 - MAC adress
-- Rough location - city, region, country. Geolocation details are innacurate, as they are linked with certain ISP datacentre locations.
+- Rough location - city, region, country. Geolocation details are innacurate, as they are linked with certain ISP datacentre locations, but you can still get the country and possibly the city. It just depends on how lucky you are, so take all location outputs with a grain of salt.
 - ZIP code of that area
 - Rough lat/long
 - Output of windows `arp -a` command to map network.
