@@ -1,4 +1,4 @@
-# UltimateGrabber V1.0
+# UltimateGrabber V1.0.1
 IP grabber programmed in python, designed to email details to a Gmail account. To set it up for your own account and get it working, you will need to take a few steps.
 
 ## #1 - Setup Gmail Account
