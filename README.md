@@ -25,8 +25,11 @@ UltimateGrabber will send an Email to the preset adress within the code, contain
 - Output of `ipconfig` windows command, to also map network.
 - **Finally, the script attaches a copy of the user's entire internet browsing history to the email as a .csv file.**
 
+# Setup
+To get the script to work, you will have to insert a few details into the script so that it actually sends the email to you - otherwise it would just return an error message.
+
 ## #1 - Setup Gmail Account
-You may want to make a new Gmail account to handle the outgoing messages, and ensure your password is not leaked from the file. Simply go to gmail.com and make a fresh account. There are a few things you will need to change here.
+You may want to make a new Gmail account to handle the outgoing messages, and ensure your password is not leaked from the file, instead of just using your current one. Simply go to gmail.com and make a fresh account. There are a few things you will need to change here.
 
 First of all, enable two-factor-authentication. Go to [myaccount.google.com](https://myaccount.google.com) and navigate to the security tab on the left. Then, scroll down until you find the 'Signing Into Google' section. Select 2-Step verification, enter your password, and follow the prompts to verify your phone number.
 
