@@ -13,6 +13,9 @@ import json
 import os
 import sys
 import platform
+import time
+
+startTime = time.time()
 
 #Operating System Information
 print('Getting System Information...')
@@ -152,4 +155,5 @@ with smtplib.SMTP("smtp.gmail.com", port=587) as smtp:
 print('Email delivery successful.')
 print('Deleting history.csv from C:\\tmp\\...')
 os.remove('C:\\tmp\\history.csv')
-print('Script operation successful.')
+executionTime = (time.time() - startTime)
+print('Script completed in ' + str(executionTime), ' Seconds')
