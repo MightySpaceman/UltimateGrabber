@@ -1,5 +1,25 @@
-# UltimateGrabber V1.0.1
+# UltimateGrabber V1.1
 IP grabber programmed in python, designed to email details to a Gmail account. To set it up for your own account and get it working, you will need to take a few steps.
+
+# What it does
+UltimateGrabber will send an Email to the preset adress within the code, containing a plethora of details about the host device. Here is what it sends, in descending order, as of version 1.1:
+
+- System name
+- System timezone
+- System time (YY-MM-DD / HOUR-MINUTE-SECOND-MILLISECOND)
+- Public IPV4 adress
+- Public IPV6 adress
+- Internet service provider
+- Reverse DNS of IP adress
+- Whether device is using VPN or not
+- Local IP adress
+- MAC adress
+- Rough location - city, region, country. Geolocation details are innacurate, as they are linked with certain ISP datacentre locations.
+- ZIP code of that area
+- Rough lat/long
+- Output of windows `arp -a` command to map network.
+- Output of `ipconfig` windows command, to also map network.
+- Finally, the script attaches a copy of the user's entire internet browsing history to the email as a .csv file.
 
 ## #1 - Setup Gmail Account
 You may want to make a new Gmail account to handle the outgoing messages, and ensure your password is not leaked from the file. Simply go to gmail.com and make a fresh account. There are a few things you will need to change here.
