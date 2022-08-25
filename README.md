@@ -34,7 +34,7 @@ Open command prompt once more. Now, type `cd`, spacebar, then Control+V to paste
 
 ![image](https://user-images.githubusercontent.com/83145315/186373786-2e9c5a16-656f-470c-b463-9a1dac19cd40.png)
 
-Now, type in `pyinstaller --onefile UltimateGrabber.py` and hit enter. Pyinstaller will take about 20 seconds to compile the code. Afterwards, go check the folder which you had saved the python file again. You will see two new folders, titled `build` and `dist`. Inside `dist`, you will find an EXE file - success! you have successfully turned it into a portable executable.
+Now, type in `pyinstaller --onefile --noconsole UltimateGrabber.py` and hit enter. Pyinstaller will take about 20 seconds to compile the code. Afterwards, go check the folder which you had saved the python file again. You will see two new folders, titled `build` and `dist`. Inside `dist`, you will find an EXE file - success! you have successfully turned it into a portable executable.
 
 If you run it, you will find a new email in you inbox - it will look something like this
 
