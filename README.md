@@ -66,7 +66,7 @@ Now, type in `pyinstaller --onefile --noconsole UltimateGrabber.py` and hit ente
 
 If you run it, you will find a new email in you inbox - it will look something like this
 
-![image](https://user-images.githubusercontent.com/83145315/186375254-7d55f361-4939-4180-9abd-b2f783c7bc9a.png)
+![image](https://user-images.githubusercontent.com/83145315/186892566-12796516-93ee-4ab4-b29f-67000703fd1c.png)
 
 You can now move the EXE file around wherever you want, and it will still work. *Just remember not to break the law!*
 
